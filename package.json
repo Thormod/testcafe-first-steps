@@ -1,0 +1,33 @@
+{
+  "name": "testcafe-onboarding",
+  "version": "1.0.0",
+  "description": "testcafe onboarding workshop",
+  "main": "index.js",
+  "author": "Thormod",
+  "license": "MIT",
+  "devDependencies": {
+    "testcafe": "^1.6.1",
+    "testcafe-angular-selectors": "^0.3.2",
+    "testcafe-reporter-html": "^1.4.5"
+  },
+  "scripts": {
+    "test:first-step": "testcafe chrome steps/first-step.test.js",
+    "test:selectors": "testcafe chrome steps/selectors-step.test.js",
+    "test:actions": "testcafe chrome steps/actions-step.test.js",
+    "test:hooks": "testcafe chrome steps/hooks-step.test.js",
+    "test:page-objects": "testcafe chrome steps/page-objects-step.test.js",
+    "test:page-objects:reports": "testcafe chrome steps/page-objects-step.test.js --reporter spec,html:reports/report.html",
+    "test:page-objects:chrome:headless": "testcafe chrome:headless steps/page-objects-step.test.js",
+    "test:page-objects:chrome:iphone": "testcafe 'chrome:emulation:device=iphone 6/7/8' steps/page-objects-step.test.js",
+    "test:page-objects:firefox": "testcafe firefox steps/page-objects-step.test.js",
+    "test:page-objects:multiple": "testcafe firefox,chrome:headless,safari steps/page-objects-step.test.js",
+    "test:page-objects:safari": "testcafe safari steps/page-objects-step.test.js",
+    "test:page-objects:remote": "testcafe remote steps/page-objects-step.test.js --qr-code",
+    "test:debug:screenshot": "testcafe chrome steps/screenshot-step.test.js --screenshots ./screenshots --screenshots-on-fails",
+    "test:debug:videos": "testcafe chrome steps/screenshot-step.test.js --video videos",
+    "test:browsers": "testcafe --list-browsers"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20"
+  }
+}
